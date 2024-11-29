@@ -9,8 +9,9 @@ import { Login } from '../controller/contLogin.js'; // Importing from your contr
 const router = express.Router();
 
 // POST endpoint to add an employee
-//router.post('/user',verifyToken, checkRole(['admin']),postUser);
-router.post('/user',postUser);
+router.post('/user', verifyToken, checkRole(['post_user', 'update_user', 'delete_user']), postUser);
+
+//router.post('/user',postUser);
 router.get('/user', getAllUsers);
 router.post('/login', Login);
 
